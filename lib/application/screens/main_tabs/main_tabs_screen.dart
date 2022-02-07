@@ -20,45 +20,54 @@ class MainTabsScreen extends StatelessWidget {
   }
 }
 
-class MovieListWidget extends StatelessWidget {
+class MovieListWidget extends StatefulWidget {
   const MovieListWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<MovieListWidget> createState() => _MovieListWidgetState();
+}
 
+class _MovieListWidgetState extends State<MovieListWidget> {
+  @override
+  Widget build(BuildContext context) {
     return Expanded(
-      child: SingleChildScrollView(
-        child: StaggeredGrid.count(
-          mainAxisSpacing: 35,
-          crossAxisSpacing: 5,
-          crossAxisCount: 2,
-          children: const [
-            StaggeredGridTile.count(
-              crossAxisCellCount: 1,
-              mainAxisCellCount: 1,
-              child: MyWidgetCardFirst(),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 1,
-              mainAxisCellCount: 1,
-              child: MyWidgetCardSecond(),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2,
-              mainAxisCellCount: 1.4,
-              child: MyWidgetCardThird(),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 1,
-              mainAxisCellCount: 1.8,
-              child: MyWidgetCardFourth(),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 1,
-              mainAxisCellCount: 1,
-              child: MyWidgetCardFifth(),
-            ),
-          ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: SingleChildScrollView(
+          child: StaggeredGrid.count(
+            mainAxisSpacing: 5,
+            crossAxisSpacing: 30,
+            crossAxisCount: 2,
+            children: const [
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: MyWidgetCardFirst(),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: MyWidgetCardSecond(),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 2,
+                mainAxisCellCount: 1.4,
+                child: MyWidgetCardThird(),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.8,
+                child: MyWidgetCardFourth(),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: MyWidgetCardFifth(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -355,7 +364,6 @@ class MyWidgetCardThird extends StatelessWidget {
             ),
           ],
         ),
-
       ],
     );
   }
@@ -490,9 +498,6 @@ class MyWidgetCardFifth extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class MyGrayWidget extends StatelessWidget {
   const MyGrayWidget({Key? key}) : super(key: key);
