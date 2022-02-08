@@ -1,27 +1,40 @@
+import 'package:comexp_player/application/screens/my_menu/my_menu_screen.dart';
 import 'package:flutter/material.dart';
 
-class MyAppBar extends StatelessWidget {
+class MyAppBar extends StatefulWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  State<MyAppBar> createState() => _MyAppBarState();
+}
 
+class _MyAppBarState extends State<MyAppBar> {
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       height: 88,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyMenuScreen(),
+                ),
+              );
+            },
             icon: const Icon(Icons.menu),
             iconSize: 18.0,
             color: Colors.white,
             tooltip: 'Menu',
           ),
           Expanded(
-              child: Container(
-                width: 10.0,
-              )),
+            child: Container(
+              width: 10.0,
+            ),
+          ),
           const Text(
             'Search by video or by name',
             style: TextStyle(
