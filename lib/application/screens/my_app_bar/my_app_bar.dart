@@ -16,6 +16,7 @@ class MyAppBar extends StatelessWidget {
             icon: const Icon(Icons.menu),
             iconSize: 18.0,
             color: Colors.white,
+            tooltip: 'Menu',
           ),
           Expanded(
               child: Container(
@@ -39,6 +40,7 @@ class MyAppBar extends StatelessWidget {
                 color: Colors.white,
                 size: 18.0,
               ),
+              tooltip: 'Search',
             ),
           ),
         ],
