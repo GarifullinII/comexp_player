@@ -29,14 +29,12 @@ class MenuListWidget extends StatefulWidget {
 class _MenuListWidgetState extends State<MenuListWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
             'Language',
             style: TextStyle(
               color: Colors.white,
@@ -45,14 +43,17 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontSize: 18.0,
             ),
           ),
-          const SizedBox(
-            height: 12,
-          ),
-          const _TabsNonScrollable(),
-          const SizedBox(
-            height: 30,
-          ),
-          const Text(
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        const _TabsNonScrollable(),
+        const SizedBox(
+          height: 30,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
             'Mainpage',
             style: TextStyle(
               color: Colors.white,
@@ -61,10 +62,13 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontSize: 18.0,
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          const Text(
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
             'Search',
             style: TextStyle(
               color: Colors.white,
@@ -73,10 +77,13 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontSize: 18.0,
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          const Text(
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
             'Technology',
             style: TextStyle(
               color: Colors.white,
@@ -85,10 +92,13 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontSize: 18.0,
             ),
           ),
-          const SizedBox(
-            height: 16,
-          ),
-          const Text(
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+         const Padding(
+           padding: EdgeInsets.only(left: 20.0),
+           child: Text(
             'FAQ',
             style: TextStyle(
               color: Colors.white,
@@ -96,11 +106,14 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontWeight: FontWeight.w600,
               fontSize: 18.0,
             ),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          const Text(
+        ),
+         ),
+        const SizedBox(
+          height: 16,
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
             'Uploaded videos',
             style: TextStyle(
               color: Colors.white,
@@ -109,10 +122,13 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               fontSize: 18.0,
             ),
           ),
-          const SizedBox(
-            height: 340,
-          ),
-          Row(
+        ),
+        const SizedBox(
+          height: 340,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Row(
             children: const [
               MyButton(
                 imageName: Images.facebook,
@@ -125,8 +141,8 @@ class _MenuListWidgetState extends State<MenuListWidget> {
               ),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -152,43 +168,46 @@ class _TabsNonScrollableState extends State<_TabsNonScrollable>
   Widget build(BuildContext context) {
     return SizedBox(
       height: 30,
-      child: TabBar(
-        controller: _tabController,
-        indicatorSize: TabBarIndicatorSize.label,
-        indicatorWeight: 1,
-        indicatorColor: Colors.white,
-        isScrollable: true,
-        labelStyle: const TextStyle(
-          color: Colors.white,
-          fontFamily: 'OpenSans-Regular',
-          fontWeight: FontWeight.w400,
-          fontSize: 14.0,
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: TabBar(
+          controller: _tabController,
+          indicatorSize: TabBarIndicatorSize.label,
+          indicatorWeight: 1,
+          indicatorColor: Colors.white,
+          isScrollable: true,
+          labelStyle: const TextStyle(
+            color: Colors.white,
+            fontFamily: 'OpenSans-Regular',
+            fontWeight: FontWeight.w400,
+            fontSize: 14.0,
+          ),
+          labelPadding: const EdgeInsets.symmetric(horizontal: 20),
+          tabs: const [
+            Tab(
+              child: Text(
+                'English',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'OpenSans-Regular',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.0,
+                ),
+              ),
+            ),
+            Tab(
+              child: Text(
+                'Russian',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'OpenSans-Regular',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.0,
+                ),
+              ),
+            ),
+          ],
         ),
-        labelPadding: EdgeInsets.zero,
-        tabs: const [
-          Tab(
-            child: Text(
-              'English',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'OpenSans-Regular',
-                fontWeight: FontWeight.w400,
-                fontSize: 14.0,
-              ),
-            ),
-          ),
-          Tab(
-            child: Text(
-              'Russian',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'OpenSans-Regular',
-                fontWeight: FontWeight.w400,
-                fontSize: 14.0,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }
